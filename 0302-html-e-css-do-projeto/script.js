@@ -44,7 +44,52 @@ console.log('--- HTMLCollection x NodeList ---');
 const gridSectionHTML = document.getElementsByClassName('grid-section');
 const gridSectionNode = document.querySelectorAll('.grid-section');
 
+// HTML Collection atualiza automaticamente
 primeiroUl.classList.add('grid-section');
 
+// Ao vivo
 console.log(gridSectionHTML);
+// Estático
 console.log(gridSectionNode);
+
+// gridSelection... .
+
+const arrayGrid = Array.from(gridSectionHTML);
+
+console.log(arrayGrid);
+
+// arrayGrid com métodos de um array;
+arrayGrid.pop();
+
+console.log(arrayGrid);
+
+arrayGrid.forEach(function(item) {
+  console.log(item);
+});
+
+console.log('--- Exercício ---');
+
+// Retorne no console todas as imagens do site
+const img = document.querySelectorAll('img');
+console.log(img);
+
+// Retorne no console apenas as imagens que começaram com a palavra imagem
+const imagensAnimais = document.querySelectorAll('img[src^="img/imagem"]');
+console.log(imagensAnimais);
+
+// Selecione todos os links externos (onde o hred começa com #)
+const soVelha = document.querySelectorAll('a[href^="#"]');
+console.log(soVelha);
+
+// Selecione os primeiro h2 dentro de .animais-descricao
+const animais3 = document.querySelector('.animais-descricao');
+const primeiroH2 = animais3.querySelector('h2');
+//const primeiroH2 = document.querySelector('.animais-descricao h2');
+console.log(animais3);
+console.log(primeiroH2);
+
+// Selecione o último p do site
+const paragrafos = document.querySelectorAll('p');
+const ultimoParagrafo = paragrafos[--paragrafos.length];
+// const ultimoParagrafo = paragrafos[paragrafos.length-1];
+console.log(ultimoParagrafo);
